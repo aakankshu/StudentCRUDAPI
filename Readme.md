@@ -22,7 +22,8 @@ Steps
 3.  The first step to create Student API is to create controller for the
     same within the controller folder using "Add Controller" Option.
 
-![](media/image1.png){width="6.5in" height="2.9451388888888888in"}
+![image](https://user-images.githubusercontent.com/47878584/113865050-47937980-97c9-11eb-9211-061951d49a87.png)
+
 
 The role of the controller will be to provide the route methods and
 destinations for CRUD operations along with what needs to be displayed
@@ -36,12 +37,14 @@ on each URL.
 5.  Now, two class model and context will be created to give structure
     to the database.
 
-![](media/image2.png){width="6.5in" height="2.4444444444444446in"}
+![image](https://user-images.githubusercontent.com/47878584/113865103-58dc8600-97c9-11eb-9573-3b22fc2658cd.png)
+
 
 6.  In Student.cs (the model) structure of the database table "Student"
     is defined.
 
-![](media/image3.png){width="6.5in" height="4.5881944444444445in"}
+![image](https://user-images.githubusercontent.com/47878584/113865142-61cd5780-97c9-11eb-849e-289d35434d3d.png)
+
 
 Here, a table with the columns/attributes: StudentID, RollNo, FirstName
 and LastName would be created. Annotations are used for the purpose of
@@ -51,7 +54,8 @@ and FirstName are required entities with a MaxLength constraint.
 7.  In StudentContext.cs class, code is written to create a table in the
     database using Student.cs model class.
 
-![](media/image4.png){width="6.5in" height="3.922222222222222in"}
+![image](https://user-images.githubusercontent.com/47878584/113865171-6c87ec80-97c9-11eb-945a-9a6697f31f2f.png)
+
 
 Here DbContext is inherited/implemented in StudentContext class using
 Entity Framework. The constructor of the class creates options object
@@ -62,9 +66,11 @@ to create the Students table within the database.
 8.  Now services need to be added to the startup file in order to
     connect to the database.
 
-![](media/image5.png){width="6.5in" height="4.4631944444444445in"}
+![image](https://user-images.githubusercontent.com/47878584/113865225-79a4db80-97c9-11eb-9dec-970a37edfdaf.png)
 
-![](media/image6.png){width="6.5in" height="2.8944444444444444in"}
+
+![image](https://user-images.githubusercontent.com/47878584/113865241-80335300-97c9-11eb-8dbb-024e01d73466.png)
+
 
 Here the connection string is added in appsettings.json file and then
 called in startup.cs file within the ConfigureServices section.
@@ -74,7 +80,8 @@ called in startup.cs file within the ConfigureServices section.
     database. Then further, the class inherits the interface and
     consists of the code describing those actions.
 
-![](media/image7.png){width="6.5in" height="4.413194444444445in"}
+![image](https://user-images.githubusercontent.com/47878584/113865279-89bcbb00-97c9-11eb-9643-ba372320fbb0.png)
+
 
 This is the IStudentData interface which would be implemented by the
 SQLStudentData class.
