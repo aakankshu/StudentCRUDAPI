@@ -86,12 +86,14 @@ called in startup.cs file within the ConfigureServices section.
 This is the IStudentData interface which would be implemented by the
 SQLStudentData class.
 
-![](media/image8.png){width="6.5in" height="4.408333333333333in"}
+![image](https://user-images.githubusercontent.com/47878584/113865432-b375e200-97c9-11eb-9c6a-427b838e9442.png)
+
 
 In SQLStudentData class, the IStudentData interface is implemented along
 with the core functionalities.
 
-![](media/image9.png){width="6.5in" height="4.381944444444445in"}
+![image](https://user-images.githubusercontent.com/47878584/113865459-bbce1d00-97c9-11eb-8115-0dc3a6fe40e6.png)
+
 
 Also, add "Addscoped" parameter in startup file so that the API is aware
 that SQLStudentData is implemented by IStudentData interface.
@@ -100,7 +102,8 @@ that SQLStudentData is implemented by IStudentData interface.
     the requests with the help of the model and the SQLStudentData
     class.
 
-![](media/image10.png){width="6.5in" height="4.339583333333334in"}
+![image](https://user-images.githubusercontent.com/47878584/113865496-c7214880-97c9-11eb-8842-c32e9762d107.png)
+
 
 As can be seen, the controller routes each function and defines the http
 method associated with function. It is also responsible for what to
@@ -110,51 +113,57 @@ respond with on the screen/console.
     so that the database and table within is created in the local
     machine MSSQL server.
 
-![](media/image11.png){width="2.5416666666666665in"
-height="4.527777777777778in"}
+![image](https://user-images.githubusercontent.com/47878584/113865534-d1434700-97c9-11eb-8f67-c95b1ce428b9.png)
+
 
 12. On running the API on IIS Server, an empty list is returned as no
     data is added to the table.
 
-![](media/image12.png){width="6.5in" height="1.1243055555555554in"}
+![image](https://user-images.githubusercontent.com/47878584/113865563-daccaf00-97c9-11eb-886a-5677465eef6e.png)
+
 
 13. We'll try out all the CRUD operations using POSTMAN.
 
 ADD:
 
-![](media/image13.png){width="6.5in" height="3.8243055555555556in"}
+![image](https://user-images.githubusercontent.com/47878584/113865602-e61fda80-97c9-11eb-99be-6c5efcdab488.png)
 
-![](media/image14.png){width="6.5in" height="3.4875in"}
+
+![image](https://user-images.githubusercontent.com/47878584/113865624-eb7d2500-97c9-11eb-8ebd-1c14b9718e5e.png)
+
 
 GET-ALL:
 
-![](media/image15.png){width="6.5in" height="3.661111111111111in"}
+![image](https://user-images.githubusercontent.com/47878584/113865651-f3d56000-97c9-11eb-80eb-7b951d993de8.png)
+
 
 GET:
 
-![](media/image16.png){width="6.5in" height="3.0590277777777777in"}
+![image](https://user-images.githubusercontent.com/47878584/113865670-fb950480-97c9-11eb-80f1-4d344208c45a.png)
+
 
 DELETE:
 
-![](media/image17.png){width="6.5in" height="2.642361111111111in"}
+![image](https://user-images.githubusercontent.com/47878584/113865684-018ae580-97ca-11eb-9434-aa4fbef44e09.png)
+
 
 UPDATE:
 
-![](media/image18.png){width="6.5in" height="3.0722222222222224in"}
+![image](https://user-images.githubusercontent.com/47878584/113865706-094a8a00-97ca-11eb-8cbb-05c7cab2ede2.png)
+
 
 14. As the API is successfully running locally, let's add Dockerfile to
     build an image of the API and run it on a container.
 
-![](media/image19.png){width="6.5in" height="3.1958333333333333in"}
+![image](https://user-images.githubusercontent.com/47878584/113865740-14051f00-97ca-11eb-8012-ae33743ffa8d.png)
 
-![](media/image20.png){width="6.5in"
-height="2.2270833333333333in"}![](media/image21.png){width="6.5in"
-height="1.1506944444444445in"}![](media/image22.png){width="6.5in"
-height="1.8958333333333333in"}
 
-![](media/image23.png){width="6.5in"
-height="1.3916666666666666in"}![](media/image24.png){width="6.5in"
-height="3.316666666666667in"}
+![image](https://user-images.githubusercontent.com/47878584/113865808-28e1b280-97ca-11eb-881c-6cae6fae3d8e.png)
+![image](https://user-images.githubusercontent.com/47878584/113865818-2d0dd000-97ca-11eb-9d52-e817dffbe164.png)
+![image](https://user-images.githubusercontent.com/47878584/113865825-30a15700-97ca-11eb-80a3-1d1663a3593c.png)
+![image](https://user-images.githubusercontent.com/47878584/113865839-3434de00-97ca-11eb-83cf-bc97a0422ea3.png)
+![image](https://user-images.githubusercontent.com/47878584/113865850-37c86500-97ca-11eb-9626-b9e934a1ee4b.png)
+
 
 As it is visible, weatherforecast API is running perfectly as it is
 hardcoded in the image, but the students api is not opening as the SQL
@@ -165,50 +174,55 @@ a Pod having a separate IP address, hence the server was inaccessible.
     embedded in the image. For the same, install
     "Microsoft.EntityFrameworkCore.SQLite" package.
 
-![](media/image25.png){width="6.5in" height="3.2305555555555556in"}
+![image](https://user-images.githubusercontent.com/47878584/113865877-40b93680-97ca-11eb-967f-3e0f55ec5ccb.png)
+
 
 Add a connection string for the sqlite db.
 
-![](media/image26.png){width="6.5in" height="4.127777777777778in"}
+![image](https://user-images.githubusercontent.com/47878584/113865894-46af1780-97ca-11eb-91c6-b6eb973cb8e0.png)
+
 
 Change the Dbcontext for Sqlite in order to connect to sqlite db.
 
 16. Once add Add-Migration and Update-Database to add the db in the
     project directory.
 
-![](media/image27.png){width="3.3194444444444446in"
-height="5.180555555555555in"}
+![image](https://user-images.githubusercontent.com/47878584/113865914-4f9fe900-97ca-11eb-8b71-3f48285710fa.png)
+
 
 17. Finally, once again add a Dockerfile, create image and run in a
     container.
 
-![](media/image28.png){width="6.5in" height="2.2416666666666667in"}
+![image](https://user-images.githubusercontent.com/47878584/113865965-5f1f3200-97ca-11eb-84b0-8908807bc735.png)
+![image](https://user-images.githubusercontent.com/47878584/113865986-63e3e600-97ca-11eb-9a65-a6a0eb20741c.png)
+![image](https://user-images.githubusercontent.com/47878584/113866002-67776d00-97ca-11eb-9cba-6d9be5d5eb4a.png)
 
-![](media/image29.png){width="6.5in" height="1.445138888888889in"}
-
-![](media/image30.png){width="6.5in" height="1.2527777777777778in"}
 
 Now, new entries will be added using POSTMAN. (4)
 
-![](media/image31.png){width="6.5in" height="4.095138888888889in"}
+![image](https://user-images.githubusercontent.com/47878584/113866048-76f6b600-97ca-11eb-8f7c-8ba3cdda8350.png)
+![image](https://user-images.githubusercontent.com/47878584/113866060-79f1a680-97ca-11eb-8ad6-b8e7dcb6a231.png)
 
-![](media/image32.png){width="6.5in" height="4.072916666666667in"}
 
 Now, the last entry is deleted.
 
-![](media/image33.png){width="6.5in" height="2.5506944444444444in"}
+![image](https://user-images.githubusercontent.com/47878584/113866080-81b14b00-97ca-11eb-8fef-f03114e76690.png)
+
 
 The second last entry would be edited from Shrey to Rahul.
 
-![](media/image34.png){width="6.5in" height="3.0694444444444446in"}
+![image](https://user-images.githubusercontent.com/47878584/113866109-8970ef80-97ca-11eb-8c6a-72f5a8c94c95.png)
+
 
 Now, see the changes:
 
-![](media/image35.png){width="6.5in" height="2.4895833333333335in"}
+![image](https://user-images.githubusercontent.com/47878584/113866135-91c92a80-97ca-11eb-92c7-cd4890ee0605.png)
+
 
 Let's try to fetch the second entry only.
 
-![](media/image36.png){width="6.5in" height="2.188888888888889in"}
+![image](https://user-images.githubusercontent.com/47878584/113866166-9b529280-97ca-11eb-9bf3-fd8d23522799.png)
+
 
 Hence, the CRUD API is working perfectly in a docker container.
 
